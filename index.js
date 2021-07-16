@@ -18,3 +18,5 @@ io.on('connection', (socket) => {
 io.on('disconnect', (evt) => {
     log('some people left')
 })
+
+io.on('done', (evt) => io.close())
