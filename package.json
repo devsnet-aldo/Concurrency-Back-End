@@ -1,0 +1,15 @@
+{
+  "name": "concurrency-back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aldo Cortes for Developers.net",
+  "license": "ISC",
+  "dependencies": {
+    "http": "*",
+    "socket.io": "^4.1.3"
+  }
+}
