@@ -1,7 +1,7 @@
 const log = console.log
 const http = require('http').createServer()
 const io = require('socket.io')(http, { cors: {
-    origin: "http://localhost:4200",
+    origin: "*",
     methods: ["GET", "POST"]
   } })
 const port = 3000
