@@ -1,12 +1,10 @@
 const log = console.log
 const app = require('express')
 const http = require('http').createServer(app)
-const io = require('socket.io')(http, {
-    allowRequest: (req, callback) => {
-      const noOriginHeader = req.headers.origin === undefined;
-      callback(null, noOriginHeader);
-    }
-})
+const io = require('socket.io')(http, { cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  } })
 const port = 3000
 
 http.listen(port, () => log(`server listening on port: ${port}`))
