@@ -9,7 +9,7 @@ const io = require('socket.io')(http, { cors: {
   } })
 const port = 3000
 
-app.use(cors());
+app.use(cors({origin: '*'}));
 
 http.listen(port, () => log(`server listening on port: ${port}`))
 
