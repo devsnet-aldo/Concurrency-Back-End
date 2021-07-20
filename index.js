@@ -1,13 +1,6 @@
 const log = console.log
-const app = require('express')
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
-});
+const app = require('express')()
+var cors = require('cors')
 
 const http = require('http').createServer(app)
 const io = require('socket.io')(http, { cors: {
@@ -15,6 +8,8 @@ const io = require('socket.io')(http, { cors: {
     methods: ["GET", "POST"]
   } })
 const port = 3000
+
+app.use(cors());
 
 http.listen(port, () => log(`server listening on port: ${port}`))
 
